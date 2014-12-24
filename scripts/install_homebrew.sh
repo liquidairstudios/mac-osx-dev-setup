@@ -22,6 +22,7 @@ brew install coreutils
 brew install docker
 brew install boot2docker
 brew install brew-cask
+brew install pstree
 
 # http://ntraft.com/installing-gdb-on-os-x-mavericks/
 
@@ -43,3 +44,4 @@ brew cask install java
 brew cask install mou
 brew cask install teamviewer
 brew cask install vlc
+
