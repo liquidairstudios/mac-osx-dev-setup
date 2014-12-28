@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+# Apache License Version 2.0, January 2004, http://www.apache.org/licenses/LICENSE-2.0
+# Copyright 2014 Svetlin Ralchev <svett@ralch.com>
+# Github repository: http://github.com/svett/mac-osx-dev-setup
+
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export GOPATH=$HOME/Projects/Go

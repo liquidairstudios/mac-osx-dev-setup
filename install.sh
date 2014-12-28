@@ -1,5 +1,6 @@
-#!/bin/bash
-# Author: Svetlin Ralchev <svett@ralch.com>
+#!/usr/bin/env bash
+# Apache License Version 2.0, January 2004, http://www.apache.org/licenses
+# Copyright 2014 Svetlin Ralchev <svett@ralch.com>
 # Github repository: http://github.com/svett/mac-osx-dev-setup
 
 # variables
@@ -12,9 +13,6 @@ install_nuget = "scripts/install_nuget.sh"
 
 configure_bash_profile = "scripts/configure_bash_profile.sh"
 configure_vim = "scripts/configure_vim.sh"
-
-# gain root priviliges
-sudo -
 
 # install homebrew and formulas
 install_homebrew
