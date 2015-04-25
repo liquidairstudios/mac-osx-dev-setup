@@ -8,6 +8,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 # installing homebrew formulas
 brew install tmux
+brew install vcprompt
 brew install wget
 brew install p7zip
 brew install git
@@ -25,6 +26,7 @@ brew install docker
 brew install boot2docker
 brew install brew-cask
 brew install pstree
+brew install hub
 
 # http://ntraft.com/installing-gdb-on-os-x-mavericks/
 
