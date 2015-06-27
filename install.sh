@@ -7,34 +7,32 @@
 install_homebrew = "scripts/install_homebrew.sh"
 install_nuget = "scripts/install_nuget.sh"
 install_go_packages = "scripts/install_go_packages.sh"
-install_nodejs_packages = "scripts/install_nodejs_packages.sh"
-install_python_libraries = "scripts/install_python_libraries.sh"
 install_nuget = "scripts/install_nuget.sh"
 
 configure_bash_profile = "scripts/configure_bash_profile.sh"
 configure_vim = "scripts/configure_vim.sh"
+configure_git = "scripts/configure_git.sh"
 
 # install homebrew and formulas
+echo "Install Homebrew packages"
 install_homebrew
 
 # installing nuget for mono
+echo "Install Nuget packages"
 install_nuget
 
 # installing go libraries
+echo "Install GO packages"
 install_go_packages
 
-# installing node libraries
-install_nodejs_packages
-
-# installing python libraries
-install_python_libraries
-
-# installing nodejs libararies
-install_nodejs_packages
-
 # configuring vim
+echo "Configure VIM"
 configure_vim
 
 # configuring .bash_profile
+echo "Configure BASH profile"
 configure_bash_profile
 
+# configure git
+echo "Configure Git profile"
+configure_git

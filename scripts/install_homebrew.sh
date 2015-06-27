@@ -16,6 +16,8 @@ brew install git-flow
 brew install hg
 brew install node
 brew install go
+brew install ruby
+brew install chruby
 brew install pyenv
 brew install pylint
 brew install mono
@@ -26,11 +28,12 @@ brew install docker
 brew install boot2docker
 brew install brew-cask
 brew install pstree
+brew install direnv
 brew install hub
 brew install packer
+brew install ag
 
 # http://ntraft.com/installing-gdb-on-os-x-mavericks/
-
 brew tap homebrew/dupes
 brew install gdb
 

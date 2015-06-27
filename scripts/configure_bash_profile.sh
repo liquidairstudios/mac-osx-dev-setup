@@ -3,15 +3,12 @@
 # Copyright 2014 Svetlin Ralchev <svett@ralch.com>
 # Github repository: http://github.com/svett/mac-osx-dev-setup
 
-# TO DO: create GOPATH folder
-# TO DO: ask for git username and git password
+mkdir -p ~/Workspace/go
+cp ../settings/.tmux.conf ~/.tmux.conf
 
-cp ../settings/.bash_profile ~/.bash_profile
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 
-# configuring the git push policy
-git config --global push.default matching
+~/.bash_it/install.sh
 
-# refreshes the shell with the new settings
-sh ~/.bash_profile
+cp ../settings/aliases.bash ~/.bash_it/lib/aliases.bash
 
-mkdir $MONO_GAC_PREFIX

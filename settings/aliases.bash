@@ -1,6 +1,7 @@
 export JAVA_HOME=/usr/libexec/java_home
 export GOPATH=~/Workspace/go
 export PATH=$PATH:$GOPATH/bin
+export MONO_GAC_PREFIX="/usr/local/gac"
 
 alias dash="open dash://$1"
 alias gst='git status'

@@ -11,4 +11,3 @@ chmod 755 /usr/local/bin/nuget
 
 # Because bootstrapper and NuGet itself use HTTPS we need to import trusted root certificates from Mozilla’s LXR into Mono’s certificate store:
 mozroots --import --sync
-
