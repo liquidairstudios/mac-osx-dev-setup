@@ -27,6 +27,7 @@ brew install boot2docker
 brew install brew-cask
 brew install pstree
 brew install hub
+brew install packer
 
 # http://ntraft.com/installing-gdb-on-os-x-mavericks/
 
@@ -48,4 +49,3 @@ brew cask install java
 brew cask install mou
 brew cask install teamviewer
 brew cask install vlc
-
