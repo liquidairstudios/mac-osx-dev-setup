@@ -37,6 +37,9 @@ brew install ag
 brew tap homebrew/dupes
 brew install gdb
 
+brew tap git-duet/tap
+brew install git-duet
+
 brew cask install darteditor
 brew cask install google-chrome
 brew cask install kaleidoscope
