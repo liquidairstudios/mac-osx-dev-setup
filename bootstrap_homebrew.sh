@@ -19,7 +19,6 @@ brew install go
 brew install ruby
 brew install chruby
 brew install pyenv
-brew install pylint
 brew install mono
 brew install dart
 brew install dartium
@@ -32,6 +31,8 @@ brew install direnv
 brew install hub
 brew install packer
 brew install ag
+brew reinstall vim --with-lua
+brew reinstall macvim --with-lua
 
 # http://ntraft.com/installing-gdb-on-os-x-mavericks/
 brew tap homebrew/dupes
@@ -47,7 +48,6 @@ brew cask install spotify
 brew cask install vagrant
 brew cask install firefox
 brew cask install iterm2
-brew cask install macvim
 brew cask install sublime-text
 brew cask install virtualbox
 brew cask install flux

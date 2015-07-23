@@ -1,11 +1,3 @@
-export JAVA_HOME=/usr/libexec/java_home
-export GOPATH=~/Workspace/go
-export GOBIN=$GOPATH/bin
-export GOSRC=$GOPATH/src
-export PATH=$PATH:$GOBIN
-
-eval "$(direnv hook bash)"
-
 alias dash="open dash://$1"
 alias gst='git status'
 alias gup="git pull --rebase"
