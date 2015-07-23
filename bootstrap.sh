@@ -26,7 +26,7 @@ ln -s ~/workspace/mac-osx-dev-setup/configs/gitconfig $HOME/.gitconfig
 
 # Setup homebrew
 # echo "Setup homebrew"
-# source bootstrap_homebrew.sh
+source bootstrap_homebrew.sh
 
 # Setup tmux
 echo "Setup tmux"
