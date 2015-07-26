@@ -38,5 +38,8 @@ echo "Setup vim"
 git clone http://github.com/luan/vimfiles.git ~/.vim
 ~/.vim/install
 
+mv $HOME/.vimrc.local $HOME/.vimrc.local
+ln -s $PWD/configs/vimrc.local $HOME/.vimrc.local
+
 mv $HOME/.vimrc.local.plugins $HOME/.vimrc.local.plugins.bak
 ln -s $PWD/configs/vimrc.local.plugins $HOME/.vimrc.local.plugins

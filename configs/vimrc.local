@@ -1,0 +1,3 @@
+nmap <F9> :TagbarToggle<CR>
+
+autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow
