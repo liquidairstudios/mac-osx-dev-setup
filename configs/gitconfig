@@ -107,6 +107,3 @@
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
   enabled = true
-[user]
-  email = svetlin.ralchev@gmail.com
-  name = Svett Ralchev 
