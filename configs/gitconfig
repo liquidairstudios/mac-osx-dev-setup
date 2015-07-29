@@ -107,3 +107,8 @@
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
   enabled = true
+[duet "env"]
+	git-author-initials = sr
+	git-author-name = Svett Ralchev
+	git-author-email = svetlin.ralchev@gmail.com
+	mtime = 1438122406
