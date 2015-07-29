@@ -1,3 +1,4 @@
-nmap <F9> :TagbarToggle<CR>
+nnoremap <silent> <leader>tt :TagbarToggle<CR>
+nnoremap <silent> <leader>dg :ConqueGdb -q<CR>
 
 autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow
