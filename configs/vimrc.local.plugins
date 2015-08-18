@@ -1,5 +1,1 @@
 Plug 'rust-lang/rust.vim'
-Plug 'vim-scripts/Conque-GDB'
-
-let g:ConqueTerm_Color = 2
-let g:ConqueTerm_StartMessages = 0
