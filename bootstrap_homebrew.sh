@@ -24,13 +24,15 @@ brew install dart
 brew install dartium
 brew install coreutils
 brew install docker
-brew install boot2docker
+brew install docker-machine
 brew install brew-cask
 brew install pstree
 brew install direnv
 brew install hub
 brew install packer
 brew install ag
+brew install eraphviz
+brew install terraform
 brew reinstall vim --with-lua
 brew reinstall macvim --with-lua
 
