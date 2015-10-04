@@ -23,6 +23,7 @@ ln -s $PWD/themes/ralch.theme.bash $HOME/.bash_it/themes/ralch/ralch.theme.bash
 ln -s ~/workspace/mac-osx-dev-setup/configs/tmux.conf $HOME/.tmux.conf
 ln -s ~/workspace/mac-osx-dev-setup/configs/git-authors $HOME/.git-authors
 ln -s ~/workspace/mac-osx-dev-setup/configs/gitconfig $HOME/.gitconfig
+ln -s ~/workspace/mac-osx-dev-setup/configs/dir_colors $HOME/.dir_colors
 
 # Setup homebrew
 # echo "Setup homebrew"
