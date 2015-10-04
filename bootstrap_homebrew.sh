@@ -33,12 +33,11 @@ brew install packer
 brew install ag
 brew install eraphviz
 brew install terraform
+brew install nvim
 brew reinstall vim --with-lua
 brew reinstall macvim --with-lua
-
-# http://ntraft.com/installing-gdb-on-os-x-mavericks/
-brew tap homebrew/dupes
-brew install gdb
+brew install fish
+brew install zsh
 
 brew tap git-duet/tap
 brew install git-duet
