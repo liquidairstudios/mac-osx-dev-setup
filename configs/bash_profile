@@ -18,6 +18,8 @@ export GOPATH=$HOME/workspace/go
 export GOBIN=$GOPATH/bin
 export GOSRC=$GOPATH/src
 
+source $HOME/.vim/scripts/base16-shell/base16-monokai.dark.sh
+
 alias ls='ls -G'
 
 _direnv_hook() {
@@ -28,3 +30,10 @@ if ! [[ "$PROMPT_COMMAND" =~ _direnv_hook ]]; then
 fi
 
 export PATH=/usr/local/sbin:$PATH:$GOBIN
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+#export NVIM_TUI_ENABLE_TRUE_COLOR=1
+alias vim=nvim

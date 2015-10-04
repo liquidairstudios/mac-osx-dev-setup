@@ -1,1 +1,3 @@
 nnoremap <silent> <leader>tt :TagbarToggle<CR>
+
+colorscheme gruvbox
