@@ -6,6 +6,23 @@
 # installing homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+clone() {
+  set +e
+  git clone https://github.com/$1 $HOME/$2
+  set -e
+}
+
+brew update
+
+brew tap caskroom/versions
+brew tap caskroom/fonts
+brew tap pivotal/tap
+brew tap universal-ctags/universal-ctags
+brew tap git-duet/tap
+brew tap kopischke/ctags
+brew tap nviennot/tmate
+brew tap neovim/neovim
+
 # installing homebrew formulas
 brew install tmux
 brew install vcprompt
@@ -31,15 +48,18 @@ brew install direnv
 brew install hub
 brew install packer
 brew install ag
+brew install ack
 brew install eraphviz
 brew install terraform
-brew install nvim
+brew install nvim --HEAD
 brew reinstall vim --with-lua
 brew reinstall macvim --with-lua
 brew install fish
 brew install zsh
-
-brew tap git-duet/tap
+brew install awscli
+brew install chruby
+brew install fzf
+brew install ctags-fishman --HEAD
 brew install git-duet
 
 brew cask install darteditor
@@ -56,3 +76,10 @@ brew cask install java
 brew cask install mou
 brew cask install teamviewer
 brew cask install vlc
+brew cask install alfred
+brew cask install slack
+brew cask install sublime-text3
+brew cask install atom
+
+clone luan/atom-config $HOME/.atom
+gem install bundler
