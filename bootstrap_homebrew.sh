@@ -35,6 +35,8 @@ brew install node
 brew install go
 brew install ruby
 brew install chruby
+brew reinstall python3
+brew install python
 brew install pyenv
 brew install mono
 brew install dart
@@ -51,9 +53,9 @@ brew install ag
 brew install ack
 brew install eraphviz
 brew install terraform
-brew install nvim --HEAD
-brew reinstall vim --with-lua
-brew reinstall macvim --with-lua
+brew install nvim --HEAD --with-lua --with-python3
+brew reinstall vim --with-lua --with-python3
+brew reinstall macvim --with-lua --with-python3
 brew install fish
 brew install zsh
 brew install awscli
@@ -83,3 +85,5 @@ brew cask install atom
 
 clone luan/atom-config $HOME/.atom
 gem install bundler
+
+sudo pip3 install neovim
