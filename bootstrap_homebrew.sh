@@ -69,7 +69,7 @@ brew_cask_install kaleidoscope
 brew_cask_install spotify
 brew_cask_install vagrant
 brew_cask_install firefox
-brew_cask_install iterm2
+brew_cask_install iterm2-beta
 brew_cask_install virtualbox
 brew_cask_install flux
 brew_cask_install java
