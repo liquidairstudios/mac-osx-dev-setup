@@ -39,7 +39,6 @@ brew_upinstall universal-ctags --HEAD
 brew_upinstall vim --with-lua
 brew_upinstall neovim --HEAD
 brew_upinstall macvim --with-lua
-brew_upinstall universal-ctags --HEAD
 
 brew_install go --with-cc-common
 brew_install vcprompt
