@@ -1,46 +1,88 @@
 #!/usr/bin/env bash
-# Apache License Version 2.0, January 2004, http://www.apache.org/licenses
-# Copyright 2014 Svetlin Ralchev <svett@ralch.com>
-# Github repository: http://github.com/svett/mac-osx-dev-setup
+
+source bootstrap_utils.sh
 
 # Setup OSX
 echo "Setup OSX"
-source boostrap_osx.sh
+./bootstrap_osx.sh
+
+# Setup homebrew
+echo "Setup homebrew"
+
+./bootstrap_homebrew.sh
 
 # Setup bash profile
 echo "Setup bash profile"
 
-git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-./$HOME/.bash_it/install.sh
+clone Bash-it/bash-it .bash_it
 
-mv $HOME/.bash_profile $HOME/.bash_profile.bak
-ln -s $PWD/configs/bash_profile $HOME/.bash_profile
-ln -s $PWD/aliases.bash $HOME/.bash_it/lib/aliases.bash
+rm -rf $HOME/.bash_it/plugins/enabled/*
+rm -rf $HOME/.bash_it/completion/enabled/*
+rm -rf $HOME/.bash_it/aliases/enabled/*
 
-mkdir -p $HOME/.bash_it/themes/ralch
-ln -s $PWD/themes/ralch.theme.bash $HOME/.bash_it/themes/ralch/ralch.theme.bash
+symlink_resource bash_profile
+symlink_resource dir_colors 
 
-ln -s ~/workspace/mac-osx-dev-setup/configs/tmux.conf $HOME/.tmux.conf
-ln -s ~/workspace/mac-osx-dev-setup/configs/git-authors $HOME/.git-authors
-ln -s ~/workspace/mac-osx-dev-setup/configs/gitconfig $HOME/.gitconfig
-ln -s ~/workspace/mac-osx-dev-setup/configs/dir_colors $HOME/.dir_colors
+symlink_bash_it_script aliases
+symlink_bash_it_theme ralch
 
-# Setup homebrew
-# echo "Setup homebrew"
-source bootstrap_homebrew.sh
+bash_it_reload
 
-# Setup tmux
-echo "Setup tmux"
-mv $HOME/.tmux $HOME/.tmux.bak
-ln -s $PWD/configs/tmux.conf $HOME/.tmux.conf
+bash_it_enable_plugin ruby 
+bash_it_enable_plugin fasd 
+bash_it_enable_plugin ssh 
+bash_it_enable_plugin tmux 
+bash_it_enable_plugin osx 
 
-# Setup VIM
-echo "Setup vim"
-git clone http://github.com/luan/vimfiles.git ~/.vim
-~/.vim/install
+bash_it_enable_completion bash-it
+bash_it_enable_completion brew 
+bash_it_enable_completion defaults 
+bash_it_enable_completion gem 
+bash_it_enable_completion git 
+bash_it_enable_completion gulp 
+bash_it_enable_completion npm 
+bash_it_enable_completion packer 
+bash_it_enable_completion pip 
+bash_it_enable_completion rake 
+bash_it_enable_completion ssh 
+bash_it_enable_completion tmux 
+bash_it_enable_completion vagrant 
 
-mv $HOME/.vimrc.local $HOME/.vimrc.local
-ln -s $PWD/configs/vimrc.local $HOME/.vimrc.local
+# Setup Software 
+echo "Configure Software"
 
-mv $HOME/.vimrc.local.plugins $HOME/.vimrc.local.plugins.bak
-ln -s $PWD/configs/vimrc.local.plugins $HOME/.vimrc.local.plugins
+# Configure git
+symlink_resource gitconfig
+symlink_resource git-authors
+
+# Configure tmux
+symlink_resource tmux.conf
+
+# Configure atom
+clone luan/atom-config .atom
+
+# Configure vim
+sudo pip3 install neovim
+
+clone luan/vimfiles .vim
+
+symlink_resource vimrc.local
+symlink_resource vimrc.local.before
+symlink_resource vimrc.local.plugins
+
+$HOME/.vim/install
+
+ln -s $HOME/.nvim $HOME/.vim
+ln -s $HOME/.nvimrc $HOME/.vimrc
+
+# Install and configure ruby
+ruby-install ruby 2.1.7 --no-reinstall
+
+chruby ruby-2.1.7
+gem install bundler
+
+symlink_resource pryrc 
+
+# Replace plist
+copy_plist org.pqrs.Karabiner.plist
+copy_plist com.googlecode.iterm2.plist
