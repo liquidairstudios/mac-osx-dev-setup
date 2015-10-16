@@ -41,6 +41,7 @@ brew_upinstall neovim --HEAD
 brew_upinstall macvim --with-lua
 
 brew_install go --with-cc-common
+brew_install rust
 brew_install vcprompt
 brew_install wget
 brew_install p7zip
@@ -48,6 +49,7 @@ brew_install git-flow
 brew_install hg
 brew_install ruby
 brew_install pyenv
+brew_install scala
 brew_install mono
 brew_install dart
 brew_install coreutils
@@ -61,6 +63,12 @@ brew_install fish
 brew_install zsh
 brew_install awscli
 brew_install brew-cask
+brew_install leiningen
+brew_install graphviz
+brew_install htop
+brew_install hugo
+brew_install nmap
+brew_install weechat
 
 brew_cask_install karabiner
 brew_cask_install darteditor
