@@ -1,6 +1,16 @@
-# Collection of scripts to setup a development work station on Mac OS X
+# MacOSX dev setup
 
-This repository contains a scripts for installing a basic development environment for Mac OS X.
-It configures the bash shell and installs various packages for go, nodejs, python, mono and etc.
+## Overview
 
-author: Svetlin Ralchev <svett@ralch.com>
+This repository contains a scripts for setuping development environment for Mac OS X.
+It configures the bash shell and installs various packages via homebrew.
+
+## Getting started
+
+```
+$ git clone github.com/svett/mac-osx-dev-setup
+$ cd mac-osx-dev-setup
+$ ./bootstrap.sh
+```
+
+
