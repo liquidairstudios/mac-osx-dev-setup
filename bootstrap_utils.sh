@@ -46,15 +46,14 @@ bash_it_enable_plugin() {
   bash-it enable plugin $name
 }
 
+bash_it_enable_alias() {
+  name=$1
+  bash-it enable alias $name
+}
+
 bash_it_enable_completion() {
   name=$1
   bash-it enable completion $name
-}
-
-bash_it_reload() {
-  set +e
-  source $HOME/.bash_profile
-  set -e
 }
 
 symlink_bash_it_script() {
