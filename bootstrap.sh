@@ -44,12 +44,7 @@ ln -s $HOME/.nvim $HOME/.vim
 ln -s $HOME/.nvimrc $HOME/.vimrc
 
 # Install and configure ruby
-ruby-install ruby 2.1.7 --no-reinstall
-
-chruby ruby-2.1.7
-gem install bundler
-
-symlink_resource pryrc 
+./bootstrap_gems.sh
 
 # Replace plist
 copy_plist org.pqrs.Karabiner.plist
