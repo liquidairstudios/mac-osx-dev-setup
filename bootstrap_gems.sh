@@ -1,6 +1,8 @@
 
 #!/bin/bash
 
+source ./bootstrap_utils.sh
+
 ruby-install ruby 2.1.7 --no-reinstall
 chruby ruby-2.1.7
 
