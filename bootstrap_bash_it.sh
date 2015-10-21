@@ -14,6 +14,7 @@ rm -rf $HOME/.bash_it/plugins/enabled/*
 rm -rf $HOME/.bash_it/completion/enabled/*
 rm -rf $HOME/.bash_it/aliases/enabled/*
 
+symlink_resource bin
 symlink_resource bash_profile
 symlink_resource dir_colors 
 
