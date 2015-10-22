@@ -1,12 +1,6 @@
 #!/bin/bash
 
-source ./bootstrap_utils.sh
-
-bash_it_reload() {
-  set +e
-  source $HOME/.bash_profile
-  set -e
-}
+source bootstrap_utils.sh
 
 clone Bash-it/bash-it .bash_it
 
@@ -21,7 +15,7 @@ symlink_resource dir_colors
 symlink_bash_it_script aliases
 symlink_bash_it_theme ralch
 
-bash_it_reload
+source $HOME/.bash_profile
 
 bash_it_enable_plugin ruby 
 bash_it_enable_plugin fasd 
