@@ -49,3 +49,6 @@ ln -s $HOME/.nvimrc $HOME/.vimrc
 # Replace plist
 copy_plist org.pqrs.Karabiner.plist
 copy_plist com.googlecode.iterm2.plist
+
+mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
+cp resources/themes/Hybrid.dvtcolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
