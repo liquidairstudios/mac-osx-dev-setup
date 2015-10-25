@@ -10,5 +10,6 @@ chruby ruby-2.1.7
 gem install bundler
 gem install tmuxinator
 gem install rails
+sudo gem install cocoapods
 
 symlink_resource pryrc 
