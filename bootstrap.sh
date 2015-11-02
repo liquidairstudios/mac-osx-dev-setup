@@ -40,8 +40,8 @@ symlink_resource vimrc.local.plugins
 
 $HOME/.vim/install
 
-ln -s $HOME/.nvim $HOME/.vim
-ln -s $HOME/.nvimrc $HOME/.vimrc
+ln -s $HOME/.vim $HOME/.config/nvim
+ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
 
 # Install and configure ruby
 ./bootstrap_gems.sh
