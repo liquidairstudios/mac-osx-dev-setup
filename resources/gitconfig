@@ -22,7 +22,7 @@
   # commit
   c = commit -m                     # commit with message
   ca = commit -am                   # commit all with message
-  ci = commit                       # commit
+  ci = commit --verbose             # commit
   amend = commit --amend            # ammend your last commit
   ammend = commit --amend           # ammend your last commit
 
@@ -36,6 +36,7 @@
   # diff
   d = diff                          # diff unstaged changes
   dc = diff --cached                # diff staged changes
+  ds = diff --stat=160,120          # diff stats
   last = diff HEAD^                 # diff last committed change
 
   # log
@@ -48,13 +49,22 @@
 
   # pull
   pl = pull                         # pull
+  pullff = pull --ff-only           # pull with fast forward only
+
+  # fetch
+  fa = fetch --all                  # fetch everything
 
   # push
   ps = push                         # push
+  pom = push origin master          # push to master
 
   # rebase
   rc = rebase --continue            # continue rebase
   rs = rebase --skip                # skip rebase
+
+  # merge
+  ff = merge --ff-only              # merge with fast forward only
+  noff = merge --no-ff              # merge with no fast forward
 
   # remote
   r = remote -v                     # show remotes (verbose)
