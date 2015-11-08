@@ -35,6 +35,7 @@
 
   # diff
   d = diff                          # diff unstaged changes
+  di = diff                         # another alias diff unstaged changes
   dc = diff --cached                # diff staged changes
   ds = diff --stat=160,120          # diff stats
   last = diff HEAD^                 # diff last committed change
@@ -93,7 +94,16 @@
   svnr = svn rebase
   svnd = svn dcommit
   svnl = svn log --oneline --show-commit
+
+
+  # Divergence (commits we added and commits remote added)
+  div = divergence
+
+  # Goodness (summary of diff lines added/removed/total)
+  gn = goodness
+  gnc = goodness --cached
 [merge]
+  tool = vimdiff
   summary = true
   verbosity = 1
 [apply]
