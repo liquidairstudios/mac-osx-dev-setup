@@ -1,4 +1,4 @@
-# MacOSX dev setup
+# MacOSX development setup
 
 ## Overview
 
@@ -13,8 +13,3 @@ $ git clone github.com/svett/mac-osx-dev-setup
 $ cd mac-osx-dev-setup
 $ ./bootstrap.sh
 ```
-
-## What's next?
-
-Long term I am planing to use [soloist](https://github.com/mkocher/soloist) to
-bootstrap my dev environment.
