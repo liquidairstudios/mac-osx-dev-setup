@@ -46,6 +46,9 @@ ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
 # Install and configure ruby
 ./bootstrap_gems.sh
 
+# Install .NET
+./bootstrap_dotnet.sh
+
 # Replace plist
 copy_plist org.pqrs.Karabiner.plist
 copy_plist com.googlecode.iterm2.plist
