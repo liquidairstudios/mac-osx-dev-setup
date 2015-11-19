@@ -14,7 +14,8 @@ export GIT_DUET_ROTATE_AUTHOR=true
 unset MAILCHECK
 
 export JAVA_HOME=/usr/libexec/java_home
-export USRBIN=$HOME/.bin
+export USR_SBIN=/usr/local/sbin
+export USR_BIN=$HOME/.bin
 export GOPATH=$HOME/workspace/go
 export GOBIN=$GOPATH/bin
 export GOSRC=$GOPATH/src
@@ -29,7 +30,7 @@ if ! [[ "$PROMPT_COMMAND" =~ _direnv_hook ]]; then
   PROMPT_COMMAND="_direnv_hook;$PROMPT_COMMAND";
 fi
 
-export PATH=/usr/local/sbin:$PATH:$GOBIN:$USRBIN
+export PATH=$PATH:$GOBIN:$USR_BIN:$USR_SBIN
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
