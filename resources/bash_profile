@@ -19,6 +19,7 @@ export USR_BIN=$HOME/.bin
 export GOPATH=$HOME/workspace/go
 export GOBIN=$GOPATH/bin
 export GOSRC=$GOPATH/src
+export GO15VENDOREXPERIMENT=true
 export NVIM_TUI_ENABLE_TRUE_COLOR=true
 
 alias ls='ls -G'
