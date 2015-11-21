@@ -22,7 +22,7 @@
   # commit
   c = commit -m                     # commit with message
   ca = commit -am                   # commit all with message
-  ci = commit --verbose             # commit
+  ci = commit 	                    # commit
   amend = commit --amend            # ammend your last commit
   ammend = commit --amend           # ammend your last commit
 
