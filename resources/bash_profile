@@ -16,7 +16,7 @@ unset MAILCHECK
 export JAVA_HOME=/usr/libexec/java_home
 export USR_SBIN=/usr/local/sbin
 export USR_BIN=$HOME/.bin
-export GOPATH=$HOME/workspace/go
+export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export GOSRC=$GOPATH/src
 export GO15VENDOREXPERIMENT=true
