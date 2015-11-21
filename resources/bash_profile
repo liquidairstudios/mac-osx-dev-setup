@@ -19,7 +19,6 @@ export USR_BIN=$HOME/.bin
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export GOSRC=$GOPATH/src
-export GO15VENDOREXPERIMENT=true
 export NVIM_TUI_ENABLE_TRUE_COLOR=true
 
 alias ls='ls -G'
@@ -31,7 +30,7 @@ if ! [[ "$PROMPT_COMMAND" =~ _direnv_hook ]]; then
   PROMPT_COMMAND="_direnv_hook;$PROMPT_COMMAND";
 fi
 
-export PATH=$PATH:$GOBIN:$USR_BIN:$USR_SBIN
+export PATH=$USR_SBIN:$PATH:$GOBIN:$USR_BIN
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
