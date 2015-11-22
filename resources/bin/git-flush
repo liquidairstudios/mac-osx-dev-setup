@@ -1,0 +1,98 @@
+#!/bin/bash
+
+RED_COLOR='\033[0;31m'
+GREEN_COLOR='\033[0;32m'
+GRAY_COLOR='\033[0;37m'
+BLUE_COLOR='\033[1;34m'
+DARK_GRAY_COLOR='\033[1;30m'
+NO_COLOR='\033[0m'
+
+get_branches() {
+  git branch -a | grep -v "master" | grep -v "develop"
+}
+
+
+print_branch() {
+  local branch=$1
+  git log -1 --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %Cgreen(%cr)%Creset last commit by %C(bold blue)<%an>%Creset' $branch
+}
+
+print_branches() {
+  local branches=$(get_branches)
+
+  for branch in $branches; do
+    print_branch $branch
+  done
+}
+
+clean_up() {
+  local branches=$(get_branches)
+}
+
+# default program usage
+print_usage_and_exit() {
+  printf "Usage:\n"
+  printf "  git-flush --until [date]\n"
+  printf "\n"
+  printf "  Deletes all branches except master and develop\n"
+  printf "\n"
+  printf "Options:\n"
+  printf "    -u, --until                 Delete branches older thant specified date\n"
+  printf "    -h, --help                  Display this [h]elp\n"
+  printf "    -V, --version               Display the program [v]ersion\n"
+  exit 1
+}
+
+print_error_and_exit() {
+  echo "${1}" >&2
+  printf "'git-flush --help' for usage.\n"
+  exit 1
+}
+
+parse_options() {
+  local version='0.1'
+
+  if [[ -z "${1+x}" ]]; then
+    print_usage_and_exit
+  fi
+
+  if [[ "${1}" == '--' ]]; then
+    print_usage_and_exit
+  fi
+
+  while :; do
+    case ${1} in
+      -u|--until)
+         if [[ -z "${1+x}" ]]; then
+           clean_up
+           break
+        else
+          print_error_and_exit "ERROR: A date must be passed to the '${1}' parameter."
+        fi
+        ;;
+      -h|--help)
+        print_usage_and_exit
+        ;;
+      -V|--version)
+        printf "Version %s\n" ${version}
+        exit 0
+        ;;
+      --) # ignore all following options
+        shift
+        break
+        ;;
+      *)
+        print_error_and_exit "ERROR: Unrecognized parameter '${1}'."
+    esac
+
+    shift
+  done
+}
+
+main() {
+  parse_options "${@}"
+}
+
+set +o nounset
+main "${@}"
+set -o nounset
