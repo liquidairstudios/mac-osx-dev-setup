@@ -1,12 +1,5 @@
 #!/bin/bash
 
-RED_COLOR='\033[0;31m'
-GREEN_COLOR='\033[0;32m'
-GRAY_COLOR='\033[0;37m'
-BLUE_COLOR='\033[1;34m'
-DARK_GRAY_COLOR='\033[1;30m'
-NO_COLOR='\033[0m'
-
 get_branches() {
   git branch -a | grep -v "master" | grep -v "develop"
 }
@@ -26,13 +19,14 @@ print_branches() {
 }
 
 clean_up() {
-  local branches=$(get_branches)
+  local date=${1}
+  local branches=$(get_branches $date)
 }
 
 # default program usage
 print_usage_and_exit() {
   printf "Usage:\n"
-  printf "  git-flush --until [date]\n"
+  printf "  git-clean-branches --until [date]\n"
   printf "\n"
   printf "  Deletes all branches except master and develop\n"
   printf "\n"
@@ -45,7 +39,7 @@ print_usage_and_exit() {
 
 print_error_and_exit() {
   echo "${1}" >&2
-  printf "'git-flush --help' for usage.\n"
+  printf "'git-clean-branches --help' for usage.\n"
   exit 1
 }
 
@@ -63,11 +57,11 @@ parse_options() {
   while :; do
     case ${1} in
       -u|--until)
-         if [[ -z "${1+x}" ]]; then
-           clean_up
-           break
-        else
+        if [[ -z "${2}" ]]; then
           print_error_and_exit "ERROR: A date must be passed to the '${1}' parameter."
+        else
+          clean_up ${2}
+          break
         fi
         ;;
       -h|--help)
