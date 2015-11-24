@@ -1,26 +1,24 @@
 #!/bin/bash
 
-get_branches() {
-  git branch -a | grep -v "master" | grep -v "develop"
-}
+export IFS=$'\n'
 
-
-print_branch() {
-  local branch=$1
-  git log -1 --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %Cgreen(%cr)%Creset last commit by %C(bold blue)<%an>%Creset' $branch
-}
-
-print_branches() {
-  local branches=$(get_branches)
+fetch_branches() {
+  local branches=$(git branch -a | grep -v "master" | grep -v "develop" | sed 's/^ *//')
+  local date=${1}
 
   for branch in $branches; do
-    print_branch $branch
+   local revision=$(git log -1 --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %Cgreen(%cr)%Creset last commit by %C(bold blue)<%an>%Creset' --until $date $branch)
+   printf "%s\n" $revision
   done
 }
 
-clean_up() {
+clean_branches() {
   local date=${1}
-  local branches=$(get_branches $date)
+  local branches=$(fetch_branches $date)
+
+  for branch in $branches; do
+    echo $branch
+  done
 }
 
 # default program usage
@@ -60,7 +58,7 @@ parse_options() {
         if [[ -z "${2}" ]]; then
           print_error_and_exit "ERROR: A date must be passed to the '${1}' parameter."
         else
-          clean_up ${2}
+          clean_branches ${2}
           break
         fi
         ;;
