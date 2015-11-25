@@ -12,6 +12,10 @@ fetch_branches() {
   done
 }
 
+current_branch_name() {
+  git rev-parse --abbrev-ref HEAD
+}
+
 clean_branches() {
   local date=${1}
   local branches=$(fetch_branches $date)
@@ -27,6 +31,7 @@ print_usage_and_exit() {
   printf "  git-clean-branches --until [date]\n"
   printf "\n"
   printf "  Deletes all branches except master and develop\n"
+  printf "  The current branch must be either 'master' or 'develop'\n"
   printf "\n"
   printf "Options:\n"
   printf "    -u, --until                 Delete branches older thant specified date\n"
@@ -57,9 +62,10 @@ parse_options() {
       -u|--until)
         if [[ -z "${2}" ]]; then
           print_error_and_exit "ERROR: A date must be passed to the '${1}' parameter."
+        elif [[ "$(current_branch_name)" == "master" || "$(current_branch_name)" != "develop" ]]; then
+          print_error_and_exit "ERROR: A current branch is '$(current_branch_name)'. It must be 'master' or 'develop'."
         else
           clean_branches ${2}
-          break
         fi
         ;;
       -h|--help)
