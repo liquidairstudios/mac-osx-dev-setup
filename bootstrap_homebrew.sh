@@ -69,6 +69,7 @@ brew_install htop
 brew_install hugo
 brew_install nmap
 brew_install weechat
+brew_install yajl
 
 brew_cask_install karabiner
 brew_cask_install darteditor
