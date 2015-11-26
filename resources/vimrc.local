@@ -1,5 +1,12 @@
 " Setting the default color scheme
-colorscheme base16-default
+set t_Co=256
+set background=dark
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = "hard"
+let g:airline_left_sep = ""		
+let g:airline_left_alt_sep = ""		
+let g:airline_right_sep = ""		
+let g:airline_right_alt_sep = ""
 
 " Shortcut to rapidly toggle `set list`
 nnoremap <silent> <leader>si :set list!<CR>
