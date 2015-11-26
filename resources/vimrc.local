@@ -1,3 +1,6 @@
+" Setting the default color scheme
+colorscheme base16-default
+
 " Shortcut to rapidly toggle `set list`
 nnoremap <silent> <leader>si :set list!<CR>
 
