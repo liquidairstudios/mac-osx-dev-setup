@@ -1,8 +1,4 @@
 alias dash="open dash://$1"
-alias gst='git status'
-alias gup="git pull --rebase"
-alias gp="git push"
-alias gap="git add -p"
 alias duet='git duet --global'
 alias solo='git solo --global'
 alias be='bundle exec'
