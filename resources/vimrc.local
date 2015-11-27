@@ -22,6 +22,8 @@ set listchars=tab:▸\ ,eol:¬
 
 " Diffoff
 nnoremap <leader>D :diffoff!<cr>
+" Spell checking
+nnoremap <F6> :setlocal spell! spell?<CR>
 
 " Prettify json
 " comes with yajl, install: brew install yajl
