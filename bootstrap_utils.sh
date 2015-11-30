@@ -37,6 +37,11 @@ brew_install() {
   set -e
 }
 
+brew_install_shell() {
+  brew_install $@
+  echo $(which $@) >> /etc/shells
+}
+
 brew_upinstall() {
   brew install $@ || brew upgrade $@
 }

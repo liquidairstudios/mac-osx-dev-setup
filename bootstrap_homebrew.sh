@@ -59,8 +59,8 @@ brew_install pstree
 brew_install hub
 brew_install packer
 brew_install terraform
-brew_install fish
-brew_install zsh
+brew_install_shell fish
+brew_install_shell zsh
 brew_install awscli
 brew_install brew-cask
 brew_install leiningen
