@@ -58,6 +58,7 @@
   # push
   ps = push                         # push
   pom = push origin master          # push to master
+  poh = push origin head            # push to head
 
   # rebase
   rc = rebase --continue            # continue rebase
