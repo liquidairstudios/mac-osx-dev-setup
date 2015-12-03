@@ -62,7 +62,7 @@ parse_options() {
       -u|--until)
         if [[ -z "${2}" ]]; then
           print_error_and_exit "ERROR: A date must be passed to the '${1}' parameter."
-        elif [[ "$(current_branch_name)" == "master" || "$(current_branch_name)" != "develop" ]]; then
+        elif [[ "$(current_branch_name)" != "master" && "$(current_branch_name)" != "develop" ]]; then
           print_error_and_exit "ERROR: A current branch is '$(current_branch_name)'. It must be 'master' or 'develop'."
         else
           clean_branches ${2}
