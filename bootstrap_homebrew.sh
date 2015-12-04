@@ -42,6 +42,7 @@ brew_upinstall macvim --with-lua
 
 brew_install go --with-cc-common
 brew_install rust
+brew_install racket
 brew_install vcprompt
 brew_install wget
 brew_install p7zip
