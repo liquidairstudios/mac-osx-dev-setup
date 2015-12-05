@@ -2,7 +2,7 @@
 
 export IFS=$'\n'
 
-fetch_branches() {
+fetch_branch_heads() {
   local branches=$(git branch -a | grep -v "master" | grep -v "develop" | sed 's/^ *//')
   local date=${1}
 
@@ -18,10 +18,10 @@ current_branch_name() {
 
 clean_branches() {
   local date=${1}
-  local branches=$(fetch_branches $date)
+  local branch_heads=$(fetch_branch_heads $date)
 
-  for branch in $branches; do
-    echo $branch
+  for heads in $branch_heads; do
+    echo $heads
   done
 }
 
