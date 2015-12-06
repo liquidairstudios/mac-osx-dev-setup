@@ -46,11 +46,19 @@ print_error_and_exit() {
   exit 1
 }
 
+validate_current_branch() {
+  if [[ "$(current_branch_name)" != "master" && "$(current_branch_name)" != "develop" ]]; then
+    print_error_and_exit "ERROR: A current branch is '$(current_branch_name)'. It must be 'master' or 'develop'."
+  fi
+}
+
 parse_options() {
   local version='0.1'
 
   if [[ -z "${1+x}" ]]; then
-    print_usage_and_exit
+    validate_current_branch
+    clean_branches now
+    return
   fi
 
   if [[ "${1}" == '--' ]]; then
@@ -62,9 +70,8 @@ parse_options() {
       -u|--until)
         if [[ -z "${2}" ]]; then
           print_error_and_exit "ERROR: A date must be passed to the '${1}' parameter."
-        elif [[ "$(current_branch_name)" != "master" && "$(current_branch_name)" != "develop" ]]; then
-          print_error_and_exit "ERROR: A current branch is '$(current_branch_name)'. It must be 'master' or 'develop'."
         else
+          validate_current_branch
           clean_branches ${2}
         fi
         ;;
