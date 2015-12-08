@@ -2,7 +2,11 @@
 
 export IFS=$'\n'
 
-fetch_branch_heads() {
+current_branch_name() {
+  git rev-parse --abbrev-ref HEAD
+}
+
+fetch_branch_infos() {
   local branches=$(git branch -a | grep -v "master" | grep -v "develop" | sed 's/^ *//')
   local date=${1}
 
@@ -12,16 +16,21 @@ fetch_branch_heads() {
   done
 }
 
-current_branch_name() {
-  git rev-parse --abbrev-ref HEAD
+delete_branch() {
+  local original_branch=$(current_branch_name)
+  local branch=${1}
+  git checkout -q $branch
+  git checkout -q $original_branch
+  git branch -D -r $branch
 }
 
 clean_branches() {
   local date=${1}
-  local branch_heads=$(fetch_branch_heads $date)
+  local branch_infos=$(fetch_branch_infos $date)
 
-  for heads in $branch_heads; do
-    echo $heads
+  for info in $branch_infos; do
+    echo $info
+    # delete_branch $branch
   done
 }
 
