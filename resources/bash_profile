@@ -38,3 +38,6 @@ fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.dnx/dnvm/dnvm.sh" ]] && source "$HOME/.dnx/dnvm/dnvm.sh" # Load dnvm
+
+[[ -e $(brew --prefix)/etc/grc.bashrc ]] && source $(brew --prefix)/etc/grc.bashrc
+

@@ -45,6 +45,7 @@ brew_install rust
 brew_install racket
 brew_install vcprompt
 brew_install wget
+brew_install grc
 brew_install p7zip
 brew_install git-flow
 brew_install hg
