@@ -30,6 +30,7 @@ clean_branches() {
 
   for info in $branch_infos; do
     echo $info
+    local branch=$(echo $info | grep -o "\\((.*)\\)")
     # delete_branch $branch
   done
 }
