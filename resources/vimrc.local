@@ -12,8 +12,11 @@ let g:airline_right_alt_sep = ""
 " Shortcut to rapidly toggle 'set list'
 nnoremap <silent> <leader>si :set list!<CR>
 
-" always start terminal in insert mode
-autocmd BufWinEnter,WinEnter term://* startinsert
+if has("autocmd")
+  au BufReadPost *.rkt,*.rktl set filetype=racket
+  au filetype racket set lisp
+  au filetype racket set autoindent
+endif
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
