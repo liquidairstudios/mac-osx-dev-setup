@@ -41,6 +41,7 @@ brew_upinstall neovim --HEAD
 brew_upinstall macvim --with-lua
 
 brew_install go --with-cc-common
+brew_install gotags
 brew_install rust
 brew_install racket
 brew_install vcprompt
