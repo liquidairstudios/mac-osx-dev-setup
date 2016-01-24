@@ -28,11 +28,6 @@ nnoremap <leader>D :diffoff!<cr>
 " Spell checking
 nnoremap <F6> :setlocal spell! spell?<CR>
 
-" Prettify json
-" comes with yajl, install: brew install yajl
-" I don't use pythons json tool because it sorts the keys
-command JSONFormat execute "%!json_reformat"
-
 " Use git rebase -i shortcuts
 " originaly developed by totherme
 " https://github.com/totherme/vimtweaks
@@ -46,16 +41,6 @@ autocmd FileType gitrebase map f 0cwf <ESC>
 autocmd FileType gitrebase map x 0cwx <ESC>
 
 " ======= Plugins Configuration
-
-" Golang plugin
-let g:go_highlight_space_tab_error = 0
-let g:go_highlight_array_whitespace_error = 0
-let g:go_highlight_trailing_whitespace_error = 0
-let g:go_highlight_extra_types = 0
-let g:go_highlight_operators = 0
-let g:go_fmt_fail_silently = 0
-let g:go_autodetect_gopath = 1
-
 au FileType go nmap <Leader>s <Plug>(go-def-split)
 au FileType go nmap <Leader>v <Plug>(go-def-vertical)
 au FileType go nmap <Leader>in <Plug>(go-info)
