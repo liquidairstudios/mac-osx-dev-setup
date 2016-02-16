@@ -25,6 +25,7 @@ symlink_resource git-authors
 
 # Configure tmux
 symlink_resource tmux.conf
+clone tmux-plugins/tpm .tmux/plugins/tpm
 
 # Configure atom
 clone luan/atom-config .atom
