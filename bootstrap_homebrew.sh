@@ -93,3 +93,4 @@ brew_cask_install slack
 brew_cask_install atom
 brew_cask_install font-inconsolata-dz-for-powerline
 brew_cask_install tmuxinator-completion
+brew_cask_install lunchy
