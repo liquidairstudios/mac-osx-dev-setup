@@ -8,12 +8,10 @@ echo "Setup OSX"
 
 # Setup homebrew
 echo "Setup homebrew"
-
 ./bootstrap_homebrew.sh
 
 # Setup bash profile
 echo "Setup bash profile"
-
 ./bootstrap_bash_it.sh
 
 # Setup Software 
